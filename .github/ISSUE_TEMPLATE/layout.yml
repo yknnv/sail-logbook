@@ -1,0 +1,29 @@
+name: Ошибка вёрстки
+description: Съехало, наложилось, вышло за поля, не влезло на страницу
+labels: [вёрстка]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Где
+      description: Заголовок страницы или имя функции p_<имя>. Номер страницы не подходит — он смещается.
+      placeholder: p_mob / «Человек за бортом»
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes:
+      label: Что не так
+      placeholder: Английская подпись налезает на русскую в третьей колонке.
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes:
+      label: Версия
+      description: Тег релиза или хеш коммита.
+      placeholder: v1.0.0
+  - type: textarea
+    id: check
+    attributes:
+      label: Вывод check_margins.py
+      description: python3 src/check_margins.py dist/sail-logbook-A5-final.pdf
+      render: text

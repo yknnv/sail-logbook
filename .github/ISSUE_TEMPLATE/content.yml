@@ -1,0 +1,41 @@
+name: Правка содержимого
+description: Ошибка в фактах, термине, формулировке справочного раздела
+labels: [содержимое]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Справочный раздел готовится к печати: неверная цифра уедет в типографию.
+        Ссылка на источник ускоряет правку в разы.
+  - type: input
+    id: where
+    attributes:
+      label: Файл и функция
+      placeholder: src/reference.py, p_beaufort
+    validations: {required: true}
+  - type: textarea
+    id: now
+    attributes:
+      label: Сейчас
+      description: Точная цитата — по ней ищется место.
+    validations: {required: true}
+  - type: textarea
+    id: replace
+    attributes:
+      label: Заменить на
+    validations: {required: true}
+  - type: textarea
+    id: why
+    attributes:
+      label: Причина
+      description: Почему нынешняя формулировка неверна. Источник, если есть.
+    validations: {required: true}
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Приоритет
+      options:
+        - CRITICAL — ошибка опасна на воде
+        - SHOULD — фактическая неточность
+        - OPTIONAL — формулировка
+    validations: {required: true}
