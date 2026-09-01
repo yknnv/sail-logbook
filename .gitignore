@@ -26,3 +26,13 @@ Thumbs.db
 *.bak
 tmp/
 scratch/
+
+# входящие партии иллюстраций: приходят архивом в корень, в репозиторий
+# не кладутся. Отобранные файлы попадают в assets/images поштучно через
+# tools/prepare_illustrations.py
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+elements/
