@@ -14,6 +14,11 @@ from reportlab.lib.utils import ImageReader
 ELEM_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                         "assets", "images")
 
+# Имена вынесены, чтобы один элемент не приходилось искать по семи вызовам.
+EL_SAIL = "e-boat-close-hauled"     # яхта под парусами, вид сверху
+EL_POWER = "e-vessel-power"         # моторное судно, вид сверху
+EL_SIDE = "e-yacht-side"            # яхта сбоку, для якорной стоянки
+
 
 def palette(ctx):
     return dict(c=ctx["c"], INK=ctx["INK"], ACCENT=ctx["ACCENT"],
@@ -29,9 +34,12 @@ def _t(P, c, x, y, s, size=5.6, color=None, font=None, align="l", space=0.2):
                     color or P["LABEL"], space, align)
 
 
-def element(c, name, cx, cy, ang, h, mirror=False):
+def element(c, name, cx, cy, ang, h=None, mirror=False, w=None):
     """Растровый элемент схемы: ставит PNG центром в (cx, cy), повёрнутым
-    на ang градусов по часовой, вписанным в высоту h.
+    на ang градусов по часовой. Размер задаётся высотой h или шириной w.
+
+    По высоте вписываются элементы, снятые сверху: там высота кадра —
+    это длина корпуса. По ширине — снятые сбоку, где длина идёт поперёк.
 
     Элементы рисуются в канонической ориентации — нос лодки строго вверх —
     и поворачиваются здесь: угол задаёт код, а не картинка. mirror отражает
@@ -45,7 +53,10 @@ def element(c, name, cx, cy, ang, h, mirror=False):
         return False
     ir = ImageReader(path)
     iw, ih = ir.getSize()
-    dw, dh = iw * h / ih, h
+    if w is not None:
+        dw, dh = w, ih * w / iw
+    else:
+        dw, dh = iw * h / ih, h
     c.saveState()
     c.translate(cx, cy)
     c.rotate(-ang)
@@ -477,8 +488,8 @@ def fig_colregs_sail(c, P, x, y, w):
     cx = x + pw / 2
     cy = y - h / 2 - 1 * mm
     wind_band(c, P, x + 2 * mm, y - 8 * mm, pw - 4 * mm, "", 2)
-    boat(c, P, cx - 9 * mm, cy - 5 * mm, 40, 13 * mm, sail=1)
-    boat(c, P, cx + 9 * mm, cy - 5 * mm, -40, 13 * mm, sail=-1, fill=False)
+    boat(c, P, cx - 9 * mm, cy - 5 * mm, 40, 13 * mm, sail=1, el=EL_SAIL)
+    boat(c, P, cx + 9 * mm, cy - 5 * mm, -40, 13 * mm, sail=-1, fill=False, el=EL_SAIL)
     _t(P, c, cx - 9 * mm, cy - 15 * mm, "ЛЕВЫЙ ГАЛС", 4.4, P["ACCENT"], P["LBLB"], "c", 0.3)
     _t(P, c, cx - 9 * mm, cy - 18.4 * mm, "УСТУПАЕТ", 4.4, P["ACCENT"], P["LBLB"], "c", 0.3)
     _t(P, c, cx + 9 * mm, cy - 15 * mm, "ПРАВЫЙ ГАЛС", 4.4, P["LABEL2"],
@@ -489,8 +500,8 @@ def fig_colregs_sail(c, P, x, y, w):
     _panel(c, P, x2, y, pw, h, "ОДИН ГАЛС", "уступает наветренное судно")
     cx2 = x2 + pw / 2
     wind_band(c, P, x2 + 2 * mm, y - 8 * mm, pw - 4 * mm, "", 2)
-    boat(c, P, cx2 - 8 * mm, cy + 1 * mm, 35, 13 * mm, sail=1)
-    boat(c, P, cx2 + 8 * mm, cy - 9 * mm, 35, 13 * mm, sail=1)
+    boat(c, P, cx2 - 8 * mm, cy + 1 * mm, 35, 13 * mm, sail=1, el=EL_SAIL)
+    boat(c, P, cx2 + 8 * mm, cy - 9 * mm, 35, 13 * mm, sail=1, el=EL_SAIL)
     _t(P, c, cx2 - 8 * mm, cy - 8 * mm, "НАВЕТРЕННОЕ", 4.4, P["ACCENT"], P["LBLB"], "c", 0.3)
     _t(P, c, cx2 - 8 * mm, cy - 11.4 * mm, "УСТУПАЕТ", 4.4, P["ACCENT"], P["LBLB"], "c", 0.3)
     _t(P, c, cx2 + 8 * mm, cy - 17 * mm, "ПОДВЕТРЕННОЕ", 4.4, P["LABEL2"],
@@ -505,24 +516,24 @@ def fig_colregs_power(c, P, x, y, w):
 
     _panel(c, P, x, y, pw, h, "КУРС НА КУРС", "оба вправо")
     cx = x + pw / 2
-    boat(c, P, cx - 5 * mm, cy - 7 * mm, 0, 12 * mm)
-    boat(c, P, cx + 5 * mm, cy + 7 * mm, 180, 12 * mm)
+    boat(c, P, cx - 5 * mm, cy - 7 * mm, 0, 12 * mm, el=EL_POWER)
+    boat(c, P, cx + 5 * mm, cy + 7 * mm, 180, 12 * mm, el=EL_POWER)
     arrow(c, P, cx - 5 * mm, cy + 1 * mm, cx - 1 * mm, cy + 7 * mm, P["ACCENT"], 0.7, 1.6 * mm)
     arrow(c, P, cx + 5 * mm, cy - 1 * mm, cx + 1 * mm, cy - 7 * mm, P["ACCENT"], 0.7, 1.6 * mm)
 
     x2 = x + pw + 3 * mm
     _panel(c, P, x2, y, pw, h, "ПЕРЕСЕЧЕНИЕ", "уступает тот, у кого судно справа")
     cx2 = x2 + pw / 2
-    boat(c, P, cx2 - 8 * mm, cy - 4 * mm, 0, 12 * mm)
-    boat(c, P, cx2 + 7 * mm, cy + 5 * mm, 270, 12 * mm)
+    boat(c, P, cx2 - 8 * mm, cy - 4 * mm, 0, 12 * mm, el=EL_POWER)
+    boat(c, P, cx2 + 7 * mm, cy + 5 * mm, 270, 12 * mm, el=EL_POWER)
     arrow(c, P, cx2 - 8 * mm, cy + 3 * mm, cx2 - 3 * mm, cy + 9 * mm, P["ACCENT"], 0.7, 1.6 * mm)
     _t(P, c, cx2 - 8 * mm, cy - 12.5 * mm, "УСТУПАЕТ", 4.4, P["ACCENT"], P["LBLB"], "c", 0.3)
 
     x3 = x2 + pw + 3 * mm
     _panel(c, P, x3, y, pw, h, "ОБГОН", "уступает обгоняющий")
     cx3 = x3 + pw / 2
-    boat(c, P, cx3 + 3 * mm, cy + 7 * mm, 0, 12 * mm)
-    boat(c, P, cx3 + 3 * mm, cy - 9 * mm, 0, 12 * mm)
+    boat(c, P, cx3 + 3 * mm, cy + 7 * mm, 0, 12 * mm, el=EL_POWER)
+    boat(c, P, cx3 + 3 * mm, cy - 9 * mm, 0, 12 * mm, el=EL_POWER)
     arrow(c, P, cx3 + 1 * mm, cy - 3 * mm, cx3 - 6 * mm, cy + 7 * mm,
           P["ACCENT"], 0.7, 1.6 * mm)
     _t(P, c, cx3 - 9 * mm, cy - 9 * mm, "УСТУПАЕТ", 4.4, P["ACCENT"], P["LBLB"], "r", 0.3)
@@ -736,7 +747,11 @@ def fig_scope(c, P, x, y, w):
     _t(P, c, x + w, bed - 4 * mm, "ГРУНТ", 4.8, P["LABEL2"], P["LBLB"], "r")
 
     bx = x + w * 0.78
-    boat(c, P, bx, surf + 1 * mm, 270, 15 * mm, sail=None)
+    # Яхта сбоку: вписывается по длине, ватерлиния кладётся на поверхность.
+    # Зеркалим: элемент нарисован носом вправо, а якорь в схеме слева —
+    # иначе цепь приходит к корме.
+    if not element(c, EL_SIDE, bx, surf + 2.2 * mm, 0, w=17 * mm, mirror=True):
+        boat(c, P, bx, surf + 1 * mm, 270, 15 * mm, sail=None)
     ax = x + w * 0.16
     polyline(c, P, [(bx - 6 * mm, surf), (x + w * 0.45, bed + 5 * mm),
                     (ax + 6 * mm, bed + 0.6 * mm), (ax, bed + 0.6 * mm)],
