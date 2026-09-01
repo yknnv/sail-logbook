@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAIL logbook — printable A5 sailing logbook (free PDF)</title>
+<meta name="description" content="A personal A5 sailing logbook: 42 passage spreads plus a reference section — MOB, MAYDAY, COLREGS, knots, tides. Free print-ready PDF.">
+<meta name="author" content="Yury Kononov">
+<meta name="keywords" content="sailing logbook, yacht logbook pdf, printable logbook A5, skipper log book, passage log, RYA logbook alternative, free logbook template">
+<link rel="canonical" href="https://yknnv.github.io/sail-logbook/en/">
+<link rel="alternate" hreflang="ru" href="https://yknnv.github.io/sail-logbook/">
+<link rel="alternate" hreflang="en" href="https://yknnv.github.io/sail-logbook/en/">
+<link rel="alternate" hreflang="x-default" href="https://yknnv.github.io/sail-logbook/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAIL logbook">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:url" content="https://yknnv.github.io/sail-logbook/en/">
+<meta property="og:title" content="SAIL logbook — printable A5 sailing logbook (free PDF)">
+<meta property="og:description" content="42 passage spreads and a reference section: MOB, MAYDAY, COLREGS, knots, tides. Print-ready PDF, layout written in code.">
+<meta property="og:image" content="https://yknnv.github.io/sail-logbook/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SAIL logbook cover next to a summary: A5, 144 pages">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SAIL logbook — printable A5 sailing logbook (free PDF)">
+<meta name="twitter:description" content="42 passage spreads and a reference section: MOB, MAYDAY, COLREGS, knots, tides.">
+<meta name="twitter:image" content="https://yknnv.github.io/sail-logbook/img/og-cover.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Cpath d='M16 4v20M16 6l9 15H16M14 21H6l8-11z' fill='none' stroke='%23111' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "@id": "https://yknnv.github.io/sail-logbook/en/#book",
+      "name": "SAIL logbook — personal sailing logbook",
+      "bookFormat": "https://schema.org/EBook",
+      "numberOfPages": 144,
+      "inLanguage": ["en", "ru"],
+      "genre": "Sailing, seamanship",
+      "description": "A printable A5 sailing logbook: 42 passage spreads plus a reference section covering safety, VHF distress calls, COLREGS, knots, weather and tides. The layout is generated from Python source.",
+      "author": {"@id": "https://yknnv.github.io/sail-logbook/#author"},
+      "publisher": {"@id": "https://yknnv.github.io/sail-logbook/#author"},
+      "image": "https://yknnv.github.io/sail-logbook/img/og-cover.png",
+      "url": "https://yknnv.github.io/sail-logbook/en/",
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "offers": {
+        "@type": "Offer", "price": "0", "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/yknnv/sail-logbook/releases/latest"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yknnv.github.io/sail-logbook/#author",
+      "name": "Yury Kononov",
+      "url": "https://ykononov.com",
+      "sameAs": ["https://github.com/yknnv"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yknnv.github.io/sail-logbook/en/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "What paper should I print it on?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Offset stock, 100–120 gsm, printed double-sided in a single black ink. Below 90 gsm the text shows through; above 130 gsm the stack stops sitting flat in the rings."}},
+        {"@type": "Question", "name": "Why are there no page numbers?",
+         "acceptedAnswer": {"@type": "Answer", "text": "The sheets are removable and the owner sets the order — finished passages come out, the reference pages you need move to the front. A printed number would fight that."}},
+        {"@type": "Question", "name": "Which file goes to the print shop?",
+         "acceptedAnswer": {"@type": "Answer", "text": "For home or copy-shop printing use the main file, trimmed to exactly 148 × 210 mm. If the shop guillotines a stack, send the version with a 3 mm bleed and crop marks."}},
+        {"@type": "Question", "name": "Will the punch pattern fit my ring binder?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Ring spacing varies between binders. Print the punch template at 100 % scale, with no fit-to-page, and hold it against your cover first. Hole diameter, inset and spacing are constants at the top of src/logbook.py."}},
+        {"@type": "Question", "name": "Is it free?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Yes. The code is MIT; the content is CC BY-NC-SA 4.0 — print it for yourself, your crew or your school, but not for sale."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{--bg:#ffffff;--bg2:#f6f6f5;--ink:#141414;--ink2:#4a4a4a;--mut:#7c7c7c;
+  --rule:#e2e2e0;--rule2:#cfcfcc;--card:#ffffff;--shadow:0 1px 2px rgba(0,0,0,.06),0 8px 28px rgba(0,0,0,.06);}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#131313;--bg2:#191919;--ink:#f0efec;--ink2:#c2c0bb;--mut:#8d8b86;
+        --rule:#2b2b2b;--rule2:#3a3a3a;--card:#1b1b1b;--shadow:0 1px 2px rgba(0,0,0,.5),0 8px 28px rgba(0,0,0,.45);}
+  img.page{filter:invert(1) hue-rotate(180deg) brightness(.92);}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em;margin:0}
+h2{font-size:26px;margin:0 0 6px}
+h3{font-size:17px;margin:0 0 6px}
+p{margin:0 0 14px;color:var(--ink2)}
+section{padding:56px 0;border-top:1px solid var(--rule)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 22px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:13px;color:var(--mut)}
+.top a{text-decoration:none;border-bottom:1px solid var(--rule2);padding-bottom:1px}
+.top a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:center;padding:36px 0 64px}
+.hero h1{font-size:clamp(38px,6vw,60px);font-weight:700;letter-spacing:-.03em}
+.hero h1 span{font-weight:300;color:var(--ink2)}
+.lede{font-size:19px;line-height:1.55;color:var(--ink2);margin:18px 0 0;max-width:34em}
+.rule{width:120px;height:2px;background:var(--ink);margin:22px 0}
+.facts{display:flex;flex-wrap:wrap;gap:8px 10px;margin:24px 0 0;padding:0;list-style:none}
+.facts li{font-size:13px;color:var(--ink2);border:1px solid var(--rule2);border-radius:999px;padding:4px 12px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:600;padding:12px 22px;border-radius:8px;
+  border:1px solid var(--ink);background:var(--ink);color:var(--bg);transition:opacity .15s}
+.btn:hover{opacity:.82}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule2);font-weight:500}
+.hero figure{margin:0}
+.hero img{width:100%;height:auto;display:block;border:1px solid var(--rule2);box-shadow:var(--shadow)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:22px}
+.card p{margin:0;font-size:15px}
+ul.plain{list-style:none;margin:10px 0 0;padding:0;font-size:15px;color:var(--ink2)}
+ul.plain li{padding-left:18px;position:relative;margin-bottom:5px}
+ul.plain li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--rule2)}
+.topics{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0;padding:0;list-style:none}
+.topics li{font-size:13.5px;color:var(--ink2);background:var(--bg2);border:1px solid var(--rule);border-radius:6px;padding:5px 11px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:26px}
+.gal figure{margin:0}
+.gal img{width:100%;height:auto;display:block;border:1px solid var(--rule2);background:#fff}
+.gal figcaption{font-size:13px;color:var(--mut);margin-top:9px}
+table{border-collapse:collapse;width:100%;font-size:15px;margin-top:8px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.tw{overflow-x:auto}
+pre{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;overflow-x:auto;
+  font:13.5px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.93em}
+details{border-bottom:1px solid var(--rule);padding:14px 0}
+details summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";display:inline-block;width:20px;color:var(--mut);font-weight:400}
+details[open] summary::before{content:"–"}
+details p{margin:10px 0 0 20px;font-size:15px}
+.note{border-left:2px solid var(--rule2);padding:2px 0 2px 16px;font-size:14.5px;color:var(--ink2)}
+footer{padding:44px 0 60px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--mut)}
+footer a{color:var(--ink2)}
+footer p{color:var(--mut);font-size:13.5px}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-bottom:40px}
+  .hero figure{max-width:300px}
+  section{padding:44px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="top">
+    <strong style="color:var(--ink);letter-spacing:.04em">SAIL logbook</strong>
+    <span><a href="/sail-logbook/" hreflang="ru">Русский</a> · <a href="https://github.com/yknnv/sail-logbook">GitHub</a></span>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>SAIL <span>logbook</span></h1>
+      <div class="rule"></div>
+      <p class="lede">A personal A5 sailing logbook — passage records, a
+      reference section and an aide-mémoire in one book. A print-ready PDF,
+      with the layout written in code: edit the text, rebuild the book with
+      one command.</p>
+      <ul class="facts">
+        <li>144 pages</li><li>42 passage spreads</li>
+        <li>148 × 210 mm</li><li>single-ink printing</li>
+        <li>bilingual field labels</li>
+      </ul>
+      <div class="cta">
+        <a class="btn" href="https://github.com/yknnv/sail-logbook/releases/latest">Download the PDF</a>
+        <a class="btn ghost" href="https://github.com/yknnv/sail-logbook">Source on GitHub</a>
+      </div>
+    </div>
+    <figure>
+      <img class="page" src="../img/cover.png" width="760" height="1078"
+           alt="SAIL logbook cover with fields for owner name, certificate and book number" fetchpriority="high">
+    </figure>
+  </header>
+</div>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">What is inside</p>
+  <div class="cols">
+    <div class="card">
+      <h3>Passage records</h3>
+      <p>42 spreads: date, vessel, crew, port of departure and arrival, times,
+      distance run, weather, your role on board, skipper's signature.</p>
+      <ul class="plain">
+        <li>one passage fills a full spread</li>
+        <li>10 pages of free notes at the back</li>
+        <li>field labels in Russian and English</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Reference at hand</h3>
+      <p>The things you need to recall in seconds on the water, not hunt for
+      on a phone with no signal.</p>
+      <ul class="topics">
+        <li>safety on board</li><li>crew briefing</li><li>points of sail</li>
+        <li>man overboard</li><li>VHF &amp; MAYDAY</li><li>safety gear</li>
+        <li>jackstay &amp; tether</li><li>knots</li><li>COLREGS</li>
+        <li>lights &amp; shapes</li><li>sound signals</li><li>mooring &amp; fenders</li>
+        <li>charter handover</li><li>passage plan</li><li>engine</li>
+        <li>weather &amp; Beaufort</li><li>navigation</li><li>tides</li><li>IALA buoyage</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Built to be printed</h3>
+      <p>Not a screen PDF that falls apart on paper.</p>
+      <ul class="plain">
+        <li>monochrome: one ink, crisp text</li>
+        <li>23 mm binding margin, mirrored by parity</li>
+        <li>separate file with 3 mm bleed and crop marks</li>
+        <li>1:1 punch template to test-fit your binder</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Pages</p>
+  <div class="gal">
+    <figure><img class="page" src="../img/points-of-sail.png" width="760" height="1078" loading="lazy"
+      alt="Points of sail page: sectors for close hauled, beam reach, broad reach and running">
+      <figcaption>Points of sail</figcaption></figure>
+    <figure><img class="page" src="../img/mob.png" width="760" height="1078" loading="lazy"
+      alt="Man overboard page: diagram of the recovery manoeuvre">
+      <figcaption>Man overboard manoeuvre</figcaption></figure>
+    <figure><img class="page" src="../img/knots.png" width="760" height="1078" loading="lazy"
+      alt="Knots page: bowline, figure eight, sheet bend, reef knot, clove hitch">
+      <figcaption>Knots</figcaption></figure>
+    <figure><img class="page" src="../img/passage-record.png" width="760" height="1078" loading="lazy"
+      alt="Passage record spread: weather, wind direction and force, sea state">
+      <figcaption>Passage record</figcaption></figure>
+  </div>
+  <p style="margin-top:26px" class="note">Page headings and the reference text
+  are in Russian; every field label is doubled in English, so the book fills in
+  fine with a mixed crew.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Printing</p>
+  <h2>Three files per release</h2>
+  <p>Grab the <a href="https://github.com/yknnv/sail-logbook/releases/latest">latest release</a> and pick one.</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th>File</th><th>When to use it</th></tr></thead>
+    <tbody>
+      <tr><td><code>sail-logbook-A5-final.pdf</code></td><td>home or copy shop: sheet is exactly 148 × 210 mm</td></tr>
+      <tr><td><code>…-bleed3mm-cropmarks.pdf</code></td><td>shop guillotines a stack: 154 × 216 mm, 3 mm bleed, crop marks</td></tr>
+      <tr><td><code>punch-template-A5.pdf</code></td><td>a single 1:1 sheet to test-fit the punch pattern</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:22px"><strong>Start with the punch template.</strong>
+  Print it at 100 % scale, with no fit-to-page, and hold it against your cover —
+  ring spacing varies between binders. Hole geometry lives in constants at the
+  top of <code>src/logbook.py</code>.</p>
+  <p style="margin-top:22px">Paper: offset 100–120 gsm, double-sided, even page count.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Build it yourself</p>
+  <h2>The book is rebuilt from source</h2>
+  <p>There is no binary layout file: the typesetting is Python on top of reportlab.
+  Edit the text, rebuild the book.</p>
+<pre><code>git clone https://github.com/yknnv/sail-logbook.git
+cd sail-logbook
+pip install -r requirements.txt
+./build.sh</code></pre>
+  <p><code>build.sh</code> renders the three PDFs and runs the layout checks:
+  overflow past the type area with a 0.15 mm tolerance, horizontal glyph
+  overlaps, vertical word overlaps. An overfull page fails the build and names
+  the page and the missing millimetres — the layout cannot drift silently.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Questions</p>
+  <details><summary>What paper should I print it on?</summary>
+    <p>Offset stock, 100–120 gsm, double-sided, single black ink. Below 90 gsm
+    the text shows through; above 130 gsm the stack stops sitting flat in the rings.</p></details>
+  <details><summary>Why are there no page numbers?</summary>
+    <p>The sheets are removable and the owner sets the order — finished passages
+    come out, the reference pages you need move to the front.</p></details>
+  <details><summary>Will the punch pattern fit my binder?</summary>
+    <p>Ring spacing varies, so print the punch template at 100 % first. Diameter,
+    inset and spacing are the constants <code>HOLE_D</code>, <code>HOLE_INSET</code>,
+    <code>HOLE_SPACING</code>.</p></details>
+  <details><summary>Can I add my own pages?</summary>
+    <p>Yes. Each reference page is one function in <code>src/reference.py</code>,
+    and the <code>pages</code> list sets the order. The layout rules are in
+    <a href="https://github.com/yknnv/sail-logbook/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p></details>
+  <details><summary>Is it free?</summary>
+    <p>Yes. Code is MIT, content is CC BY-NC-SA 4.0 — print it for yourself,
+    your crew or your school, but not for sale.</p></details>
+  <details><summary>Does the reference replace training?</summary>
+    <p>No. Figures and procedures depend on your training, your gear, local rules
+    and the passage plan. This is an aide-mémoire for someone who has been taught.</p></details>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+  <p>Code — <a href="https://github.com/yknnv/sail-logbook/blob/main/LICENSE">MIT</a>.
+  Content — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+  Carlito font — SIL Open Font License 1.1.</p>
+  <p>Diagrams are drawn in code; photographic illustrations are AI-generated and hand-finished.</p>
+  <p>By <a href="https://ykononov.com">Yury Kononov</a> ·
+  <a href="https://github.com/yknnv/sail-logbook">source</a> ·
+  <a href="/sail-logbook/">Русский</a></p>
+</div>
+</footer>
+
+</body>
+</html>

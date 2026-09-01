@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAIL logbook — журнал яхтсмена A5, PDF для печати</title>
+<meta name="description" content="Личный журнал яхтсмена A5: 42 разворота под записи и справочник — MOB, MAYDAY, МППСС, узлы, приливы. Бесплатный PDF для печати.">
+<meta name="author" content="Yury Kononov">
+<meta name="keywords" content="журнал яхтсмена, судовой журнал, яхтенный логбук, sailing logbook, logbook pdf, шкиперский журнал, A5 печать, парусный спорт">
+<link rel="canonical" href="https://yknnv.github.io/sail-logbook/">
+<link rel="alternate" hreflang="ru" href="https://yknnv.github.io/sail-logbook/">
+<link rel="alternate" hreflang="en" href="https://yknnv.github.io/sail-logbook/en/">
+<link rel="alternate" hreflang="x-default" href="https://yknnv.github.io/sail-logbook/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131313" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SAIL logbook">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://yknnv.github.io/sail-logbook/">
+<meta property="og:title" content="SAIL logbook — журнал яхтсмена A5, PDF для печати">
+<meta property="og:description" content="42 разворота под записи и справочник: MOB, MAYDAY, МППСС, узлы, приливы. Готовый PDF, вёрстка описана кодом.">
+<meta property="og:image" content="https://yknnv.github.io/sail-logbook/img/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Обложка журнала SAIL logbook рядом с описанием: A5, 144 страницы">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SAIL logbook — журнал яхтсмена A5, PDF для печати">
+<meta name="twitter:description" content="42 разворота под записи и справочник: MOB, MAYDAY, МППСС, узлы, приливы. Вёрстка описана кодом.">
+<meta name="twitter:image" content="https://yknnv.github.io/sail-logbook/img/og-cover.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23fff'/%3E%3Cpath d='M16 4v20M16 6l9 15H16M14 21H6l8-11z' fill='none' stroke='%23111' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Book",
+      "@id": "https://yknnv.github.io/sail-logbook/#book",
+      "name": "SAIL logbook — личный журнал яхтсмена",
+      "alternateName": "Personal Sailing Logbook",
+      "bookFormat": "https://schema.org/EBook",
+      "numberOfPages": 144,
+      "inLanguage": ["ru", "en"],
+      "genre": "Парусный спорт, судовождение",
+      "description": "Печатный журнал яхтсмена формата A5: 42 разворота под записи о переходах и справочный раздел по безопасности, связи, МППСС, узлам, погоде и приливам. Вёрстка описана кодом на Python.",
+      "author": {"@id": "https://yknnv.github.io/sail-logbook/#author"},
+      "publisher": {"@id": "https://yknnv.github.io/sail-logbook/#author"},
+      "image": "https://yknnv.github.io/sail-logbook/img/og-cover.png",
+      "url": "https://yknnv.github.io/sail-logbook/",
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://github.com/yknnv/sail-logbook/releases/latest"
+      }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://yknnv.github.io/sail-logbook/#code",
+      "name": "sail-logbook",
+      "description": "Генератор печатного журнала яхтсмена: reportlab, сборка PDF одной командой, автоматическая проверка полей и наложений.",
+      "codeRepository": "https://github.com/yknnv/sail-logbook",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3",
+      "license": "https://opensource.org/licenses/MIT",
+      "author": {"@id": "https://yknnv.github.io/sail-logbook/#author"},
+      "about": {"@id": "https://yknnv.github.io/sail-logbook/#book"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://yknnv.github.io/sail-logbook/#author",
+      "name": "Yury Kononov",
+      "url": "https://ykononov.com",
+      "sameAs": ["https://github.com/yknnv"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://yknnv.github.io/sail-logbook/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "На какой бумаге печатать журнал?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Офсет 100–120 г/м². Печать двусторонняя, в одну краску — чёрным. Тоньше 90 г/м² текст просвечивает, толще 130 г/м² пачка перестаёт складываться в кольцах."}},
+        {"@type": "Question", "name": "Почему в журнале нет номеров страниц?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Листы съёмные, порядок задаёт владелец: отработанные переходы вынимаются, нужные справочные страницы переставляются вперёд. Напечатанный номер такому порядку мешал бы."}},
+        {"@type": "Question", "name": "Какой файл отдавать в типографию?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Если печатаете дома или в копицентре — основной файл, лист ровно 148 × 210 мм. Если типография режет пачкой, отдавайте вариант с припуском 3 мм и метками реза."}},
+        {"@type": "Question", "name": "Подойдёт ли перфорация к моей папке на кольцах?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Расположение колец у папок разное. Сначала распечатайте шаблон перфорации в масштабе 100 %, без «вписать в страницу», и приложите к своей обложке. Диаметр, отступ и шаг отверстий правятся константами в начале src/logbook.py."}},
+        {"@type": "Question", "name": "Можно ли добавить свои страницы?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Да. Каждая справочная страница — одна функция в src/reference.py, порядок задаёт список pages. Сборка проверяет переполнение и падает с указанием страницы и недостающих миллиметров."}},
+        {"@type": "Question", "name": "Журнал бесплатный?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Да. Код — MIT, содержимое — CC BY-NC-SA 4.0: печатайте для себя, экипажа или школы, но не на продажу."}}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f6f6f5; --ink:#141414; --ink2:#4a4a4a; --mut:#7c7c7c;
+  --rule:#e2e2e0; --rule2:#cfcfcc; --card:#ffffff; --shadow:0 1px 2px rgba(0,0,0,.06),0 8px 28px rgba(0,0,0,.06);
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#131313;--bg2:#191919;--ink:#f0efec;--ink2:#c2c0bb;--mut:#8d8b86;
+        --rule:#2b2b2b;--rule2:#3a3a3a;--card:#1b1b1b;--shadow:0 1px 2px rgba(0,0,0,.5),0 8px 28px rgba(0,0,0,.45);}
+  img.page{filter:invert(1) hue-rotate(180deg) brightness(.92);}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+h1,h2,h3{line-height:1.2;letter-spacing:-.01em;margin:0}
+h2{font-size:26px;margin:0 0 6px}
+h3{font-size:17px;margin:0 0 6px}
+p{margin:0 0 14px;color:var(--ink2)}
+section{padding:56px 0;border-top:1px solid var(--rule)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 22px}
+
+/* верх */
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:13px;color:var(--mut)}
+.top a{text-decoration:none;border-bottom:1px solid var(--rule2);padding-bottom:1px}
+.top a:hover{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1fr 340px;gap:56px;align-items:center;padding:36px 0 64px}
+.hero h1{font-size:clamp(38px,6vw,60px);font-weight:700;letter-spacing:-.03em}
+.hero h1 span{font-weight:300;color:var(--ink2)}
+.lede{font-size:19px;line-height:1.55;color:var(--ink2);margin:18px 0 0;max-width:34em}
+.rule{width:120px;height:2px;background:var(--ink);margin:22px 0}
+.facts{display:flex;flex-wrap:wrap;gap:8px 10px;margin:24px 0 0;padding:0;list-style:none}
+.facts li{font-size:13px;color:var(--ink2);border:1px solid var(--rule2);border-radius:999px;padding:4px 12px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;text-decoration:none;font-size:15px;font-weight:600;padding:12px 22px;border-radius:8px;
+  border:1px solid var(--ink);background:var(--ink);color:var(--bg);transition:opacity .15s}
+.btn:hover{opacity:.82}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule2);font-weight:500}
+.hero figure{margin:0}
+.hero img{width:100%;height:auto;display:block;border:1px solid var(--rule2);box-shadow:var(--shadow)}
+
+/* сетки */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:22px}
+.card p{margin:0;font-size:15px}
+ul.plain{list-style:none;margin:10px 0 0;padding:0;font-size:15px;color:var(--ink2)}
+ul.plain li{padding-left:18px;position:relative;margin-bottom:5px}
+ul.plain li::before{content:"";position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--rule2)}
+
+.topics{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 0;padding:0;list-style:none}
+.topics li{font-size:13.5px;color:var(--ink2);background:var(--bg2);border:1px solid var(--rule);border-radius:6px;padding:5px 11px}
+
+/* галерея */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:26px}
+.gal figure{margin:0}
+.gal img{width:100%;height:auto;display:block;border:1px solid var(--rule2);background:#fff}
+.gal figcaption{font-size:13px;color:var(--mut);margin-top:9px}
+
+table{border-collapse:collapse;width:100%;font-size:15px;margin-top:8px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.tw{overflow-x:auto}
+
+pre{background:var(--bg2);border:1px solid var(--rule);border-radius:8px;padding:16px 18px;overflow-x:auto;
+  font:13.5px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.93em}
+
+details{border-bottom:1px solid var(--rule);padding:14px 0}
+details summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+";display:inline-block;width:20px;color:var(--mut);font-weight:400}
+details[open] summary::before{content:"–"}
+details p{margin:10px 0 0 20px;font-size:15px}
+
+.note{border-left:2px solid var(--rule2);padding:2px 0 2px 16px;font-size:14.5px;color:var(--ink2)}
+footer{padding:44px 0 60px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--mut)}
+footer a{color:var(--ink2)}
+footer p{color:var(--mut);font-size:13.5px}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-bottom:40px}
+  .hero figure{max-width:300px}
+  section{padding:44px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="top">
+    <strong style="color:var(--ink);letter-spacing:.04em">SAIL logbook</strong>
+    <span><a href="/sail-logbook/en/" hreflang="en">English</a> · <a href="https://github.com/yknnv/sail-logbook">GitHub</a></span>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>SAIL <span>logbook</span></h1>
+      <div class="rule"></div>
+      <p class="lede">Личный журнал яхтсмена формата A5 — записи о переходах,
+      справочник и памятка в одной книге. Готовый PDF для печати; вёрстка
+      описана кодом, поэтому книга правится текстом и пересобирается
+      одной командой.</p>
+      <ul class="facts">
+        <li>144 страницы</li><li>42 разворота под записи</li>
+        <li>148 × 210 мм</li><li>печать в одну краску</li>
+        <li>подписи RU / EN</li>
+      </ul>
+      <div class="cta">
+        <a class="btn" href="https://github.com/yknnv/sail-logbook/releases/latest">Скачать PDF</a>
+        <a class="btn ghost" href="https://github.com/yknnv/sail-logbook">Исходники на GitHub</a>
+      </div>
+    </div>
+    <figure>
+      <img class="page" src="img/cover.png" width="760" height="1078"
+           alt="Обложка журнала яхтсмена SAIL logbook: поля для имени владельца, квалификации и номера тома" fetchpriority="high">
+    </figure>
+  </header>
+</div>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Что внутри</p>
+  <div class="cols">
+    <div class="card">
+      <h3>Записи о переходах</h3>
+      <p>42 разворота: дата, судно, экипаж, порт отхода и прихода, время,
+      пройденное расстояние, погода, роль на борту, подпись шкипера.</p>
+      <ul class="plain">
+        <li>карточка занимает разворот целиком</li>
+        <li>10 страниц заметок в конце</li>
+        <li>подписи полей на русском и английском</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Справочник под рукой</h3>
+      <p>То, что нужно вспомнить на воде за несколько секунд, а не искать
+      в телефоне без связи.</p>
+      <ul class="topics">
+        <li>безопасность на борту</li><li>брифинг экипажа</li>
+        <li>курсы относительно ветра</li><li>человек за бортом</li>
+        <li>MAYDAY и УКВ-связь</li><li>снаряжение безопасности</li>
+        <li>леер и страховочный конец</li><li>узлы</li>
+        <li>МППСС</li><li>огни и знаки</li><li>звуковые сигналы</li>
+        <li>швартовка и кранцы</li><li>приёмка чартера</li>
+        <li>план перехода</li><li>двигатель</li>
+        <li>погода и шкала Бофорта</li><li>навигация</li>
+        <li>приливы</li><li>буи IALA</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Сделано для печати</h3>
+      <p>Не PDF «для экрана», который потом плохо ложится на бумагу.</p>
+      <ul class="plain">
+        <li>монохром: одна краска, чёткий текст</li>
+        <li>поле 23 мм со стороны колец, чередуется по чётности</li>
+        <li>отдельный файл с припуском 3 мм и метками реза</li>
+        <li>шаблон перфорации 1:1 для примерки</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Страницы</p>
+  <div class="gal">
+    <figure><img class="page" src="img/points-of-sail.png" width="760" height="1078" loading="lazy"
+      alt="Страница «Курсы относительно ветра»: схема с секторами галфвинда, бакштага и левентика">
+      <figcaption>Курсы относительно ветра</figcaption></figure>
+    <figure><img class="page" src="img/mob.png" width="760" height="1078" loading="lazy"
+      alt="Страница «Человек за бортом»: схема манёвра возврата к пострадавшему">
+      <figcaption>Человек за бортом: манёвр</figcaption></figure>
+    <figure><img class="page" src="img/knots.png" width="760" height="1078" loading="lazy"
+      alt="Страница «Узлы»: булинь, восьмёрка, шкотовый, рифовый, выбленочный">
+      <figcaption>Узлы</figcaption></figure>
+    <figure><img class="page" src="img/passage-record.png" width="760" height="1078" loading="lazy"
+      alt="Разворот записи о переходе: погода, направление и сила ветра, состояние моря">
+      <figcaption>Запись о переходе</figcaption></figure>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Печать</p>
+  <h2>Три файла в релизе</h2>
+  <p>Скачайте <a href="https://github.com/yknnv/sail-logbook/releases/latest">последний релиз</a> и выберите нужный.</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th>Файл</th><th>Когда брать</th></tr></thead>
+    <tbody>
+      <tr><td><code>sail-logbook-A5-final.pdf</code></td><td>дома или в копицентре: лист ровно 148 × 210 мм</td></tr>
+      <tr><td><code>…-bleed3mm-cropmarks.pdf</code></td><td>типография режет пачкой: 154 × 216 мм, припуск 3 мм, метки реза</td></tr>
+      <tr><td><code>punch-template-A5.pdf</code></td><td>один лист 1:1 для примерки перфорации</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:22px"><strong>Начните с шаблона перфорации.</strong>
+  Распечатайте его в масштабе 100 %, без «вписать в страницу», и приложите
+  к своей обложке: расположение колец у папок различается. Параметры
+  отверстий правятся константами в начале <code>src/logbook.py</code>.</p>
+  <p style="margin-top:22px">Бумага — офсет 100–120 г/м², печать двусторонняя,
+  число страниц чётное.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Собрать самому</p>
+  <h2>Книга пересобирается из исходников</h2>
+  <p>Бинарного макета нет: вёрстка описана кодом на Python через reportlab.
+  Правится текст — пересобирается книга.</p>
+<pre><code>git clone https://github.com/yknnv/sail-logbook.git
+cd sail-logbook
+pip install -r requirements.txt
+./build.sh</code></pre>
+  <p><code>build.sh</code> собирает три PDF и прогоняет проверку вёрстки:
+  выход за границы набора с допуском 0,15 мм, горизонтальные наложения
+  символов, вертикальные наложения слов. Переполнение страницы роняет
+  сборку с указанием страницы и недостающих миллиметров — молча съехать
+  вёрстка не может.</p>
+  <p>Число разворотов под записи, диаметр и шаг отверстий, поля и версия
+  задаются константами в начале <code>src/logbook.py</code>.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <p class="eyebrow">Вопросы</p>
+  <details><summary>На какой бумаге печатать?</summary>
+    <p>Офсет 100–120 г/м², двусторонняя печать в одну краску. Тоньше 90 г/м²
+    текст просвечивает, толще 130 г/м² пачка перестаёт складываться в кольцах.</p></details>
+  <details><summary>Почему нет номеров страниц?</summary>
+    <p>Листы съёмные, порядок задаёт владелец: отработанные переходы вынимаются,
+    нужные справочные страницы переставляются вперёд. Напечатанный номер
+    такому порядку мешал бы.</p></details>
+  <details><summary>Подойдёт ли перфорация к моей папке?</summary>
+    <p>Расположение колец у папок разное, поэтому сначала печатается шаблон
+    перфорации в масштабе 100 % и прикладывается к обложке. Диаметр, отступ
+    от края и шаг отверстий — константы <code>HOLE_D</code>, <code>HOLE_INSET</code>,
+    <code>HOLE_SPACING</code>.</p></details>
+  <details><summary>Можно ли добавить свои страницы?</summary>
+    <p>Да. Каждая справочная страница — одна функция в <code>src/reference.py</code>,
+    порядок задаёт список <code>pages</code>. Правила вёрстки описаны
+    в <a href="https://github.com/yknnv/sail-logbook/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a>.</p></details>
+  <details><summary>Журнал бесплатный?</summary>
+    <p>Да. Код — MIT, содержимое — CC BY-NC-SA 4.0: печатайте для себя,
+    экипажа или школы, но не на продажу.</p></details>
+  <details><summary>Заменяет ли справочник обучение?</summary>
+    <p>Нет. Числовые ориентиры и процедуры зависят от подготовки, снаряжения,
+    местных правил и плана перехода. Журнал — памятка для того, кто уже учился.</p></details>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+  <p>Код — <a href="https://github.com/yknnv/sail-logbook/blob/main/LICENSE">MIT</a>.
+  Содержимое — <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru">CC BY-NC-SA 4.0</a>.
+  Шрифт Carlito — SIL Open Font License 1.1.</p>
+  <p>Схемы нарисованы кодом, иллюстрации сгенерированы ИИ и обработаны вручную.</p>
+  <p>Автор — <a href="https://ykononov.com">Yury Kononov</a> ·
+  <a href="https://github.com/yknnv/sail-logbook">исходники</a> ·
+  <a href="/sail-logbook/en/">English</a></p>
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+name: release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Тег для релиза, например v1.0.0'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: собрать и выложить PDF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Установить зависимости
+        run: pip install -r requirements.txt
+
+      - name: Собрать и проверить
+        run: ./build.sh
+
+      - name: Подписать файлы версией
+        id: ver
+        run: |
+          TAG="${{ github.event.inputs.tag || github.ref_name }}"
+          V="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          cd dist
+          for f in *.pdf; do mv "$f" "${f%.pdf}-$V.pdf"; done
+          ls -la
+
+      - name: Создать релиз
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: SAIL logbook ${{ steps.ver.outputs.tag }}
+          generate_release_notes: true
+          body: |
+            Журнал яхтсмена A5 — печатный журнал, справочник и памятка.
+            144 страницы, 42 разворота под записи, печать в одну краску.
+
+            | файл | зачем |
+            |---|---|
+            | `sail-logbook-A5-final-*.pdf` | основной, лист ровно 148 × 210 мм |
+            | `sail-logbook-A5-final-bleed3mm-cropmarks-*.pdf` | с припуском 3 мм и метками реза |
+            | `punch-template-A5-*.pdf` | шаблон перфорации 1:1 |
+
+            **Начните с шаблона перфорации:** распечатайте в масштабе 100 %,
+            без «вписать в страницу», и приложите к своей обложке.
+
+            Содержимое — CC BY-NC-SA 4.0. Справочный раздел не заменяет обучение.
+          files: dist/*.pdf
