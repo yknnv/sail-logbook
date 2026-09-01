@@ -1,0 +1,28 @@
+# сборка
+dist/
+*.pdf
+!docs/**/*.pdf
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ос и редакторы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# временное
+*.tmp
+*.bak
+tmp/
+scratch/
