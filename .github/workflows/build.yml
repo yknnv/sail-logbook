@@ -44,7 +44,7 @@ jobs:
           assert n % 2 == 0, f"нечётное число страниц: {n} — двусторонняя печать разъедется"
           PY
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: sail-logbook-pdf
           path: dist/*.pdf
