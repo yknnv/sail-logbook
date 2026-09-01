@@ -1,11 +1,12 @@
 name: build
 
+# Фильтра по путям здесь намеренно нет. Сборка — обязательная проверка
+# в ruleset: если workflow не запустился, чек никогда не отчитается и PR
+# зависнет навсегда. Прогон стоит меньше минуты.
 on:
   push:
     branches: [main]
-    paths: ['src/**', 'assets/**', 'tools/**', 'build.sh', 'requirements.txt', '.github/workflows/build.yml']
   pull_request:
-    paths: ['src/**', 'assets/**', 'tools/**', 'build.sh', 'requirements.txt']
   workflow_dispatch:
 
 permissions:
