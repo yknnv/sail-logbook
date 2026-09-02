@@ -40,15 +40,19 @@
 Рисуются два независимых узла в разных местах кольца, соединённые
 верёвками разного цвета. Путь одной верёвки не прослеживается.
 
-## Композиция: два состояния в одном кадре
+## Композиция: начало и финал
 
-Узел показывается **дважды, рядом**: слева — свободно уложенный, где виден
-путь троса и каждое пересечение; справа — тот же узел затянутый, каким он
-выглядит в работе.
+Узел показывается **дважды, рядом**: слева — последний шаг вязки, когда
+остаётся одно движение; справа — готовый затянутый узел.
 
-Так сделаны образцы в `reference-samples/`, и это заметно полезнее одной
-картинки: по левой половине узел вяжут, по правой узнают. Обе половины
-в одном файле, одного масштаба, без разделительной линии.
+Так сделаны образцы в `reference-samples/`. Пара «начало → финал» учит
+вязать, а не просто показывает результат дважды: по левому кадру видно,
+что делать, по правому — что должно получиться. Обе половины в одном
+файле, одного масштаба, без разделительной линии.
+
+**Критерий приёмки проверяется по правому кадру.** Левый проверяется
+отдельно: это должен быть последний шаг перед готовым узлом, а не
+произвольная стадия.
 
 ## Образец геометрии
 
@@ -58,7 +62,7 @@
 ## Промпт
 
 ```
-Two views of the same knot side by side in one frame: on the left the knot loosely laid out so the path of the rope and every crossing is readable, on the right the same knot pulled up tight as it looks in use. Same scale, no divider.
+Two frames side by side, same scale, no divider: on the left the final step of tying, one move short of complete, with every crossing readable; on the right the finished knot pulled up tight as it looks in use.
 A round turn and two half hitches tied to a heavy metal mooring ring. One
 single continuous rope. The rope passes through the ring twice, making two
 complete parallel turns around the metal, with both turns clearly visible and
