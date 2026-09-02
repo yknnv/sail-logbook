@@ -43,9 +43,20 @@
 только в том, с какой стороны выходят концы. Это единственное, что нужно
 проверить.
 
+## Композиция: два состояния в одном кадре
+
+Узел показывается **дважды, рядом**: слева — свободно уложенный, где виден
+путь троса и каждое пересечение; справа — тот же узел затянутый, каким он
+выглядит в работе.
+
+Так сделаны образцы в `reference-samples/`, и это заметно полезнее одной
+картинки: по левой половине узел вяжут, по правой узнают. Обе половины
+в одном файле, одного масштаба, без разделительной линии.
+
 ## Промпт
 
 ```
+Two views of the same knot side by side in one frame: on the left the knot loosely laid out so the path of the rope and every crossing is readable, on the right the same knot pulled up tight as it looks in use. Same scale, no divider.
 A reef knot, also called a square knot, joining two ropes of the same
 thickness. Loosely dressed and lying flat, symmetrical, seen from directly
 above. Two interlocking bights pass through each other. Critically: for each

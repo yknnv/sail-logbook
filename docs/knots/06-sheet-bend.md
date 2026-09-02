@@ -38,9 +38,25 @@
 Тросы рисуются одинаковой толщины — тогда узел теряет смысл, ради
 которого существует. Разница диаметров должна быть примерно вдвое.
 
+## Композиция: два состояния в одном кадре
+
+Узел показывается **дважды, рядом**: слева — свободно уложенный, где виден
+путь троса и каждое пересечение; справа — тот же узел затянутый, каким он
+выглядит в работе.
+
+Так сделаны образцы в `reference-samples/`, и это заметно полезнее одной
+картинки: по левой половине узел вяжут, по правой узнают. Обе половины
+в одном файле, одного масштаба, без разделительной линии.
+
+## Образец геометрии
+
+`reference-samples/lj-05-sheet-bend.jpg` — шкотовый.
+Сверять по нему **топологию**, а не стиль: образцы цветные и с фоном.
+
 ## Промпт
 
 ```
+Two views of the same knot side by side in one frame: on the left the knot loosely laid out so the path of the rope and every crossing is readable, on the right the same knot pulled up tight as it looks in use. Same scale, no divider.
 A sheet bend joining two ropes of clearly different thickness, loosely dressed
 and lying flat, seen from directly above. The thick rope is bent back on itself
 to form an open bight. The thin rope comes up through that bight from below,

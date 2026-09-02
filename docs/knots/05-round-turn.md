@@ -40,9 +40,25 @@
 Рисуются два независимых узла в разных местах кольца, соединённые
 верёвками разного цвета. Путь одной верёвки не прослеживается.
 
+## Композиция: два состояния в одном кадре
+
+Узел показывается **дважды, рядом**: слева — свободно уложенный, где виден
+путь троса и каждое пересечение; справа — тот же узел затянутый, каким он
+выглядит в работе.
+
+Так сделаны образцы в `reference-samples/`, и это заметно полезнее одной
+картинки: по левой половине узел вяжут, по правой узнают. Обе половины
+в одном файле, одного масштаба, без разделительной линии.
+
+## Образец геометрии
+
+`reference-samples/lj-04-two-half-hitches.jpg` — штык со шлагом.
+Сверять по нему **топологию**, а не стиль: образцы цветные и с фоном.
+
 ## Промпт
 
 ```
+Two views of the same knot side by side in one frame: on the left the knot loosely laid out so the path of the rope and every crossing is readable, on the right the same knot pulled up tight as it looks in use. Same scale, no divider.
 A round turn and two half hitches tied to a heavy metal mooring ring. One
 single continuous rope. The rope passes through the ring twice, making two
 complete parallel turns around the metal, with both turns clearly visible and

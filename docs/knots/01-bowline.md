@@ -37,9 +37,25 @@
 Рисуется просто петля с накинутым сверху витком, без воротника вокруг
 коренной части. Проверять именно воротник: без него узла нет.
 
+## Композиция: два состояния в одном кадре
+
+Узел показывается **дважды, рядом**: слева — свободно уложенный, где виден
+путь троса и каждое пересечение; справа — тот же узел затянутый, каким он
+выглядит в работе.
+
+Так сделаны образцы в `reference-samples/`, и это заметно полезнее одной
+картинки: по левой половине узел вяжут, по правой узнают. Обе половины
+в одном файле, одного масштаба, без разделительной линии.
+
+## Образец геометрии
+
+`reference-samples/lj-01-bowline.jpg` — беседочный.
+Сверять по нему **топологию**, а не стиль: образцы цветные и с фоном.
+
 ## Промпт
 
 ```
+Two views of the same knot side by side in one frame: on the left the knot loosely laid out so the path of the rope and every crossing is readable, on the right the same knot pulled up tight as it looks in use. Same scale, no divider.
 A bowline knot tied in a single rope, loosely dressed so every crossing is
 readable. A small fixed loop hangs open at the bottom of the frame. The
 standing part runs up to the top of the frame. In the standing part there is a
