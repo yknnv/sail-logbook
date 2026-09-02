@@ -1,0 +1,48 @@
+# Восьмёрка · figure-eight stopper
+
+**ID файла:** `s-11-figure-eight` · соотношение 3:4
+
+## Назначение
+
+Стопорный узел на конце шкота: не даёт концу выскочить из блока или
+стопора. Не затягивается намертво, в отличие от простого узла.
+
+## Последовательность вязки
+
+1. Ходовой конец заводится **поверх** коренной части — образуется петля.
+2. Ходовой конец обносится **вокруг** коренной части сзади.
+3. Ходовой конец пропускается в петлю **сверху вниз**.
+
+Готовый узел в плоском виде имеет силуэт цифры 8.
+
+## Что должно читаться на рисунке
+
+- **Ровно три пересечения** прядей.
+- Силуэт двух смежных петель — верхней и нижней.
+- Ходовой конец выходит **с противоположной стороны** от коренной части,
+  а не рядом с ней.
+
+## Критерий приёмки
+
+Считаются пересечения. **Три** — восьмёрка. **Два** — простой узел, другой
+узел: он затягивается намертво и режет трос. Ни одного связного пути —
+брак.
+
+## Типичная ошибка генератора
+
+Вместо узла рисуется декоративный плоский орнамент из двух переплетённых
+лент — знак бесконечности. Это не узел: у восьмёрки **одна** верёвка
+с одним свободным концом и одной коренной частью.
+
+## Промпт
+
+```
+A figure-eight stopper knot tied at the end of a single rope, loosely dressed
+and lying flat so the shape of the numeral eight is obvious. One rope only,
+with one free tail and one standing part running out of the frame. The working
+end crosses over the standing part to form a loop, passes behind the standing
+part, and then goes down through that loop. Exactly three crossings, each one
+clearly readable. The free tail exits on the opposite side of the knot from the
+standing part. Standing part in light grey, working end in darker grey. Round
+three-strand rope, generous spacing between strands.
+```
