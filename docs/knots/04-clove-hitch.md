@@ -36,9 +36,25 @@
 Рисуются два аккуратных кольца вокруг опоры и поверх них — не связанная
 с ними диагональная верёвка. Выглядит опрятно, узлом не является.
 
+## Композиция: два состояния в одном кадре
+
+Узел показывается **дважды, рядом**: слева — свободно уложенный, где виден
+путь троса и каждое пересечение; справа — тот же узел затянутый, каким он
+выглядит в работе.
+
+Так сделаны образцы в `reference-samples/`, и это заметно полезнее одной
+картинки: по левой половине узел вяжут, по правой узнают. Обе половины
+в одном файле, одного масштаба, без разделительной линии.
+
+## Образец геометрии
+
+`reference-samples/lj-02-clove-hitch.jpg` — выбленочный.
+Сверять по нему **топологию**, а не стиль: образцы цветные и с фоном.
+
 ## Промпт
 
 ```
+Two views of the same knot side by side in one frame: on the left the knot loosely laid out so the path of the rope and every crossing is readable, on the right the same knot pulled up tight as it looks in use. Same scale, no divider.
 A clove hitch tied around a vertical wooden rail, seen from the front. One
 single continuous rope only. The rope makes a first turn around the rail, the
 running part then crosses diagonally over that first turn, makes a second turn

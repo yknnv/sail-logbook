@@ -1,0 +1,59 @@
+# Задвижной штык · rolling hitch
+
+**ID файла:** `s-16-rolling-hitch` · соотношение 3:4
+**Статус: кандидат.** В книге этого узла пока нет — решение за владельцем.
+
+## Зачем он в книге
+
+Единственный узел, которым снимают нагрузку с закусившего шкота: он
+держит при тяге **вдоль** опоры, а выбленочный в этой ситуации ползёт.
+Ситуация на яхте штатная — шкот заело в лебёдке под нагрузкой, — и
+заменить узел нечем.
+
+Ещё им подвязывают что-либо к штагу или лееру, когда груз тянет вниз.
+
+## Последовательность вязки
+
+1. Ходовой конец обносится вокруг опоры и **пересекает** коренную часть.
+2. Второй шлаг кладётся рядом с первым, **в ту же сторону**, поверх
+   коренной части — оба витка ложатся с той стороны, откуда придёт тяга.
+3. Третий шлаг заводится **по другую сторону** коренной части и
+   пропускается под себя, как в выбленочном.
+
+Два прижимающих витка всегда со стороны нагрузки — в этом весь узел.
+
+## Что должно читаться на рисунке
+
+- **Три шлага**, из них два прижаты рядом с одной стороны.
+- Направление тяги очевидно: два витка со стороны, куда тянет.
+- Ходовой конец выходит из-под последнего шлага.
+
+## Критерий приёмки
+
+Два сдвоенных витка **со стороны нагрузки**. Если они с противоположной,
+узел не держит — это его единственный смысл, и ошибка обесценивает
+картинку целиком.
+
+## Образец геометрии
+
+`reference-samples/lj-06-rolling-hitch.jpg` — задвижной штык.
+Сверять по нему **топологию**, а не стиль: образец цветной и с фоном.
+
+## Композиция: два состояния в одном кадре
+
+Слева — свободно уложенный узел, справа — затянутый.
+
+## Промпт
+
+```
+Two views of the same knot side by side in one frame: on the left the knot
+loosely laid out so the path of the rope and every crossing is readable, on the
+right the same knot pulled up tight as it looks in use. Same scale, no divider.
+A rolling hitch tied around a vertical rope or stay. The working rope makes two
+turns around the vertical line, both lying side by side on the same side and
+each crossing over its own standing part, then a third turn on the opposite
+side of the standing part, tucked under itself. The two doubled turns are on
+the side from which the load pulls. The standing part leads away downward under
+tension. Vertical line in light grey, working rope in darker grey, round
+three-strand rope, loosely dressed, every crossing readable.
+```
